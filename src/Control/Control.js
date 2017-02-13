@@ -39,8 +39,10 @@ export default class Control extends React.Component {
 
   handleEmail(correct) {
     if(correct) {
-      this.setState({ complete: true });
-      setTimeout(() => this.setState({ blank: true }), timeDelay);
+      setTimeout(() => {
+        this.setState({ complete: true });
+        setTimeout(() => this.setState({ blank: true }), timeDelay);
+      }, timeDelay);
     } else {
       setTimeout(() => this.setState(prevState => {
         return { emails: prevState.emails.concat( this.newEmail() ) };

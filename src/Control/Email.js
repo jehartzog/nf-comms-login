@@ -32,6 +32,7 @@ export default class Email extends React.Component {
   handleSubmit(event) {
     setTimeout(() => {
       let correct = false;
+      // eslint-disable-next-line
       if (isEmailValid(this.state.value)) {
         correct = true;
       }
