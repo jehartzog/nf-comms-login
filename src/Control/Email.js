@@ -36,9 +36,9 @@ export default class Email extends React.Component {
         correct = true;
       }
       this.props.handleEmail(correct);
-      this.setState({ status: { complete: true, correct: correct } });
+      this.setState({ status: { submitted: true, complete: true, correct: correct } });
     }, this.props.timeDelay);
-    this.setState({ status: { submitted: true } });
+    this.setState({ status: { submitted: true, complete: false } });
     event.preventDefault();
   }
 
