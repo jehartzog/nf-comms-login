@@ -67,9 +67,9 @@ export default class Control extends React.Component {
   }
 
   render() {
-    if (this.state.blank) {
-      return null;
-    }
+    // if (this.state.blank) {
+    //   return null;
+    // }
     return (
       <div >
         {this.state.start ? <p>Loading...</p> : null}

@@ -1,11 +1,11 @@
 import React from 'react';
 
-function isEmailValid(email) {
-  if (email === 'test') {
-    return true;
-  }
-  return false;
-}
+// function isEmailValid(email) {
+//   if (email === 'test') {
+//     return true;
+//   }
+//   return false;
+// }
 
 export default class Email extends React.Component {
  static propTypes = {
