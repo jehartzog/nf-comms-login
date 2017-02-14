@@ -74,11 +74,11 @@ export default class Control extends React.Component {
     return (
       <div>
 
-          {this.state.start ? <p><Typist cursor={{ hideWhenDone: true }}>Loading...</Typist></p>: null}
+          {this.state.start ? <p><Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>Loading...</Typist></p>: null}
 
           {this.renderInputs()}
           {this.renderEmails()}
-          {this.state.complete ? <p><Typist cursor={{ hideWhenDone: true }}>Session Concluded</Typist></p> : null}
+          {this.state.complete ? <p><Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>Session Concluded</Typist></p> : null}
       </div>
     );
   }
