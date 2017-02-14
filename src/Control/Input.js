@@ -1,4 +1,5 @@
 import React from 'react';
+import Typist from 'react-typist';
 
 export default class Input extends React.Component {
  static propTypes = {
@@ -37,9 +38,9 @@ export default class Input extends React.Component {
 
   renderComplete() {
     if (this.state.status.correct) {
-      return <p>Loading...</p>;
+      return <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}><p>Loading...</p></Typist>;
     } else {
-      return <p>Input Failed</p>;
+      return <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}><p>Input Failed</p></Typist>;
     }
   }
 
@@ -47,8 +48,8 @@ export default class Input extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-        &lt;User&gt;
-        <input type="text" value={this.state.value} onChange={this.handleChange} disabled={this.state.status.submitted}/>
+            <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>&lt;User&gt;</Typist>
+            <input type="text" value={this.state.value} onChange={this.handleChange} disabled={this.state.status.submitted}/>
         </label>
       </form>
     );
@@ -57,7 +58,7 @@ export default class Input extends React.Component {
   render() {
     return (
         <div>
-          <p>Input Required:</p>
+          <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}><p>Input Required:</p></Typist>
           {this.state.start ? this.renderForm() : null }
           {this.state.status.complete ? this.renderComplete() : null}
         </div>

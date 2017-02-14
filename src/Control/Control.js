@@ -1,4 +1,5 @@
 import React from 'react';
+import Typist from 'react-typist';
 
 import Input from './Input';
 import Email from './Email';
@@ -71,11 +72,13 @@ export default class Control extends React.Component {
     //   return null;
     // }
     return (
-      <div >
-        {this.state.start ? <p>Loading...</p> : null}
-        {this.renderInputs()}
-        {this.renderEmails()}
-        {this.state.complete ? <p>Session Concluded</p> : null}
+      <div>
+
+          {this.state.start ? <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}><p>Loading...</p></Typist>: null}
+
+          {this.renderInputs()}
+          {this.renderEmails()}
+          {this.state.complete ? <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}><p>Session Concluded</p></Typist> : null}
       </div>
     );
   }

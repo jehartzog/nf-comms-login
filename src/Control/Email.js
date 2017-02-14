@@ -1,4 +1,5 @@
 import React from 'react';
+import Typist from 'react-typist';
 
 // function isEmailValid(email) {
 //   if (email === 'test') {
@@ -45,9 +46,9 @@ export default class Email extends React.Component {
 
   renderComplete() {
     if (this.state.status.correct) {
-      return <p>Input Successful</p>;
+      return <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}><p>Input Successful</p></Typist>;
     } else {
-      return <p>Input Failed</p>;
+      return <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}><p>Input Failed</p></Typist>;
     }
   }
 
@@ -55,7 +56,7 @@ export default class Email extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-        &lt;User&gt;
+        <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>&lt;User&gt;</Typist>
         <input type="text" value={this.state.value} onChange={this.handleChange} disabled={this.state.status.submitted}/>
         </label>
       </form>
@@ -65,7 +66,7 @@ export default class Email extends React.Component {
   render() {
     return (
         <div>
-          <p>Enter preferred comms receipt:</p>
+          <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}><p>Enter preferred comms receipt:</p></Typist>
           {this.state.start ? this.renderForm() : null }
           {this.state.status.complete ? this.renderComplete() : null}
         </div>
